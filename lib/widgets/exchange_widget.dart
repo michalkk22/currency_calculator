@@ -74,6 +74,11 @@ class _ExchangeWidgetState extends State<ExchangeWidget> {
     );
   }
 
+  Future<void> getCurrencies() async {
+    _currencies = await _currenciesProvider.fetchCurrencies();
+    setState(() {});
+  }
+
   void exchange() {
     setState(() {
       _newAmount = exchanger.exchange(
@@ -82,11 +87,6 @@ class _ExchangeWidgetState extends State<ExchangeWidget> {
         _otherSelectedCurrency!.rate,
       );
     });
-  }
-
-  Future<void> getCurrencies() async {
-    _currencies = await _currenciesProvider.fetchCurrencies();
-    setState(() {});
   }
 
   DropdownButton<Currency> currencyDropdown(

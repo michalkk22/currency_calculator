@@ -13,7 +13,9 @@ class Currency {
   int get hashCode => code.hashCode;
 
   @override
-  bool operator ==(covariant Currency other) {
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! Currency) return false;
     return code == other.code;
   }
 }

@@ -22,8 +22,8 @@ class HashSetCurrencyCollection implements CurrencyCollection {
     return _currencies.firstWhereOrNull((currency) => currency.code == code);
   }
 
-  @override
-  void removeCurrency(Currency currency) {
-    _currencies.remove(currency);
-  }
+  // @override
+  // void removeCurrency(String code) {
+  //   _currencies.removeWhere((currency) => currency.code == code);
+  // }
 }

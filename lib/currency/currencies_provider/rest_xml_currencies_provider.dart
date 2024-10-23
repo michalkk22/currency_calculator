@@ -8,6 +8,11 @@ import 'package:http/http.dart' as http;
 import 'package:xml/xml.dart';
 
 class RestXmlCurrencyProvider implements CurrenciesProvider {
+  RestXmlCurrencyProvider._privateConstructor();
+  static final RestXmlCurrencyProvider _instance =
+      RestXmlCurrencyProvider._privateConstructor();
+  factory RestXmlCurrencyProvider() => _instance;
+
   @override
   Future<CurrencyCollection> fetchCurrencies() async {
     final currencies = HashSetCurrencyCollection();
